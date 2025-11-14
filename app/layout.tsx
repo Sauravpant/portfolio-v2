@@ -8,13 +8,13 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Saurav Pant - Full-Stack Developer",
+  title: "Saurav Pant - Full Stack Developer",
   description:
-    "Full-Stack Web and App Developer | React Native Developer | AI/ML Enthusiast | Building scalable, high-performance systems",
-  generator: "v0.app",
+    "Full-Stack Web and App Developer | React Native Developer",
   keywords: [
     "Full-Stack Developer",
-    "React",
+    "Saurav Pant",
+    "React.js",
     "Next.js",
     "React Native",
     "Node.js",
