@@ -39,13 +39,13 @@ export default function Header() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
         <div className="flex flex-col gap-1">
           <Link
             href="#home"
-            className="relative w-10 h-10 rounded-full border-2 border-primary/60 hover:border-primary overflow-hidden hover:scale-110 transition-all duration-300 flex-shrink-0 bg-linear-to-br from-primary/20 to-accent/20 flex items-center justify-center"
+            className="relative w-10 h-10 rounded-full border-2 border-primary/60 hover:border-primary overflow-hidden hover:scale-110 transition-all duration-300 flex-shrink-0 bg-linear-to-br from-primary/20 to-accent/20 flex items-center justify-center hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]"
           >
-            <span className="text-xs font-bold text-primary">IMG</span>
+            <span className="text-xs font-bold text-primary">SP</span>
           </Link>
         </div>
 
@@ -54,7 +54,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-foreground/70 hover:text-primary transition-all duration-300 text-sm font-medium relative group"
+              className="text-foreground/70 hover:text-primary transition-all duration-300 text-sm lg:text-sm  font-medium relative group hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]"
             >
               {link.label}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300" />
@@ -71,7 +71,7 @@ export default function Header() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground/60 hover:text-primary hover:scale-110 transition-all duration-300 p-2 rounded-lg hover:bg-primary/10"
+                  className="text-foreground/60 hover:text-primary hover:scale-110 transition-all duration-300 p-2 rounded-lg hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]"
                   aria-label={social.label}
                 >
                   <Icon size={20} />

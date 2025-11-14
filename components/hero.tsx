@@ -11,7 +11,7 @@ export default function Hero() {
   const [displayedText, setDisplayedText] = useState("");
   const [showTags, setShowTags] = useState(false);
 
-  const fullText = "Hi, I'm Saurav Pant";
+  const fullText = "Saurav Pant";
   const tags = [
     "Full-Stack Developer",
     "React Native Developer",
@@ -132,7 +132,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.h1
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance"
+          className="text-5xl sm:text-6xl lg:text-8xl font-bold mb-6 text-balance"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}>
@@ -153,36 +153,33 @@ export default function Hero() {
 
         {showTags && (
           <motion.div
-            className="mb-12"
+            className="mb-12 flex flex-wrap justify-center gap-4"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}>
-            <p className="text-lg sm:text-xl lg:text-2xl text-foreground/90 font-medium tracking-tight">
-              {tags.map((tag, index) => (
-                <motion.span
-                  key={tag}
-                  initial={{ opacity: 0, y: 8, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{
-                    delay: index * 0.35,
-                    duration: 0.8,
-                    ease: [0.34, 1.56, 0.64, 1],
-                  }}
-                  className="inline-block">
-                  {tag}
-                  {index < tags.length - 1 && (
-                    <span className="mx-4 text-primary font-bold text-lg sm:text-xl lg:text-2xl">
-                      ·
-                    </span>
-                  )}
-                </motion.span>
-              ))}
-            </p>
+            {tags.map((tag, index) => (
+              <motion.div
+                key={tag}
+                className="px-4 py-2 rounded-full border border-cyan-400/50 bg-cyan-500/10 text-cyan-400 font-medium text-sm md:text-lg lg:text-xl cursor-default"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  delay: index * 0.3,
+                  duration: 0.6,
+                  ease: [0.34, 1.56, 0.64, 1],
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  backgroundColor: "rgba(14, 165, 233, 0.2)",
+                }}>
+                {tag}
+              </motion.div>
+            ))}
           </motion.div>
         )}
 
         <motion.p
-          className="text-base sm:text-lg text-foreground/70 mb-12 max-w-2xl mx-auto text-balance"
+          className="text-base md:text-lg xl:text-xl text-foreground/70 mb-12 max-w-2xl mx-auto text-balance"
           initial={{ opacity: 0, y: 10 }}
           animate={showTags ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
           transition={{ delay: 0.5, duration: 0.8, ease: [0.23, 1, 0.32, 1] }}>
@@ -200,7 +197,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.2 }}>
-              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-6 text-lg font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] border border-cyan-400/30 rounded-lg">
+              <Button className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-5 lg:py-6 text-lg font-semibold transition-all duration-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] border border-cyan-400/30 rounded-lg">
                 View Projects
               </Button>
             </motion.div>
@@ -212,7 +209,7 @@ export default function Hero() {
               transition={{ duration: 0.2 }}>
               <Button
                 variant="outline"
-                className="border-cyan-400/80 hover:border-cyan-400 text-foreground px-8 py-6 text-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/5 hover:bg-cyan-500/20 transition-all duration-300 backdrop-blur-sm font-semibold rounded-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+                className="border-cyan-400/80 hover:border-cyan-400 text-foreground px-8 py-5 lg:py-6 text-lg bg-gradient-to-br from-cyan-500/10 to-blue-500/5 hover:bg-cyan-500/20 transition-all duration-300 backdrop-blur-sm font-semibold rounded-lg hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
                 Get in Touch
               </Button>
             </motion.div>
@@ -225,17 +222,33 @@ export default function Hero() {
           animate={showTags ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
           transition={{ delay: 1, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}>
           {[
-            { icon: Github, href: "https://github.com", label: "GitHub" },
-            { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-            { icon: Code2, href: "https://leetcode.com", label: "LeetCode" },
-            { icon: Mail, href: "mailto:contact@example.com", label: "Email" },
+            {
+              icon: Github,
+              href: "https://github.com/Sauravpant",
+              label: "GitHub",
+            },
+            {
+              icon: Linkedin,
+              href: "https://www.linkedin.com/in/sauravpant7",
+              label: "LinkedIn",
+            },
+            {
+              icon: Code2,
+              href: "https://leetcode.com/u/saurav_7",
+              label: "LeetCode",
+            },
+            {
+              icon: Mail,
+              href: "mailto:sauravpant777@gmail.com",
+              label: "Email",
+            },
           ].map((social, i) => (
             <motion.a
               key={social.label}
               href={social.href}
               target={social.label !== "Email" ? "_blank" : undefined}
               rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
-              className="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-125 p-3 rounded-lg hover:bg-primary/20 backdrop-blur-sm border border-primary/10 hover:border-primary/30"
+              className="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-125 p-3 rounded-lg hover:bg-primary/20 backdrop-blur-sm border border-primary/10 hover:border-primary/30 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]"
               aria-label={social.label}
               initial={{ opacity: 0, y: 15, scale: 0.8 }}
               animate={

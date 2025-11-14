@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useEffect, useRef } from "react"
-import { AnimatedCard } from "./animated-card"
-import { SkillLogo } from "./skill-logo"
+import { useEffect, useRef } from "react";
+import { AnimatedCard } from "./animated-card";
+import { SkillLogo } from "./skill-logo";
 
 const skillCategories = [
   {
@@ -11,72 +11,87 @@ const skillCategories = [
   },
   {
     name: "Frontend",
-    skills: ["React", "Next.js", "TailwindCSS", "HTML5", "CSS3"],
+    skills: [
+      "React.js",
+      "Next.js",
+      "HTML5",
+      "CSS3",
+      "TailwindCSS",
+      "Sass",
+      "Bootstrap",
+    ],
   },
   {
-    name: "Backend & API",
+    name: "Backend Development",
     skills: ["Node.js", "Express.js"],
   },
   {
     name: "Databases and Caching",
-    skills: ["PostgreSQL", "MongoDB", "Redis", "MySQL"],
+    skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
   },
   {
-    name: "Mappers",
-    skills: ["Prisma", "Drizzle", "Mongoose"],
+    name: "ORMs & ODMs",
+    skills: ["Prisma", "Mongoose"],
   },
   {
     name: "Mobile Development",
-    skills: ["React Native", "Expo"],
+    skills: ["React-Native", "Expo"],
   },
   {
-    name: "Tools",
-    skills: ["Docker", "Git", "GitHub", "VSCode"],
+    name: "Cloud Platforms & Services",
+    skills: ["AWS", "Firebase", "Supabase", "Appwrite"],
   },
-]
+  {
+    name: "Tools & Platforms",
+    skills: ["Docker", "Git", "GitHub", "VSCode", "VisualStudio", "Postman"],
+  },
+];
 
 export default function Skills() {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("opacity-100", "translate-y-0")
+          entry.target.classList.add("opacity-100", "translate-y-0");
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
     if (ref.current) {
-      observer.observe(ref.current)
+      observer.observe(ref.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/30">
       <div className="max-w-6xl mx-auto">
-        <div ref={ref} className="opacity-0 translate-y-10 transition-all duration-700">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-16 text-balance text-center">
-            Skills & <span className="text-primary">Expertise</span>
+        <div
+          ref={ref}
+          className="opacity-0 translate-y-10 transition-all duration-700">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-16 text-balance text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Tech Stack
           </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {skillCategories.map((category, idx) => (
               <AnimatedCard key={category.name} delay={idx * 80}>
                 <div className="p-8 rounded-xl border border-primary/20 bg-gradient-to-br from-primary/5 to-background/80 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)]">
-                  <h3 className="text-2xl font-semibold text-foreground mb-1">{category.name}</h3>
+                  <h3 className="text-lg lg:text-xl font-semibold text-foreground mb-1 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    {category.name}
+                  </h3>
                   <div className="w-12 h-1 bg-primary rounded-full mb-6" />
                   <div className="grid grid-cols-4 gap-6">
                     {category.skills.map((skill) => (
                       <div
                         key={skill}
-                        className="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-primary/15 transition-all duration-300 group cursor-pointer hover:scale-110"
-                      >
-                        <SkillLogo name={skill} size={50} />
-                        <span className="text-xs font-medium text-foreground/70 group-hover:text-primary transition-colors text-center line-clamp-2">
+                        className="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-primary/15 transition-all duration-300 group cursor-pointer hover:scale-110 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]">
+                        <SkillLogo name={skill} size={40} />
+                        <span className="text-[10px] lg:text-xs font-medium text-foreground/70 group-hover:text-primary transition-colors text-center line-clamp-2">
                           {skill}
                         </span>
                       </div>
@@ -89,5 +104,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }
