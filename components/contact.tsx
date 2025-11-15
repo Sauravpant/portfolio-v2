@@ -44,10 +44,31 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
-    setTimeout(() => setSubmitted(false), 3000);
+    const form = new FormData();
+    form.append("name", formData.name);
+    form.append("email", formData.email);
+    form.append("message", formData.message);
+    form.append("access_key", process.env.NEXT_PUBLIC_ACCESS_KEY!);
+    const object = Object.fromEntries(form);
+    const json = JSON.stringify(object);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
+      const data = await response.json();
+      if (!data.success) {
+        throw new Error("Failed to send message");
+      }
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err: any) {
+      console.log(err);
+    }
   };
 
   const socialLinks = [
