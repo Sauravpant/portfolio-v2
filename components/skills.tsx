@@ -23,7 +23,7 @@ const skillCategories = [
   },
   {
     name: "Backend Development",
-    skills: ["Node.js", "Express.js"],
+    skills: ["Node.js", "Express.js", "FastAPI"],
   },
   {
     name: "Databases and Caching",

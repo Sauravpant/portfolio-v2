@@ -90,7 +90,7 @@ export default function About() {
                   </span>
                   , having solved{" "}
                   <span className="text-cyan-400 font-semibold">
-                    350+ LeetCode problems
+                    400+ LeetCode problems
                   </span>{" "}
                   to continuously challenge and refine my problem-solving
                   skills.

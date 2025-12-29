@@ -13,7 +13,7 @@ const projects = [
     id: 1,
     name: "TechEz",
     description:
-      "A real-time platform connecting technicians and consumers with live matching, queue management, and backend optimizations using Redis caching and BullMQ. Mobile app is planned.",
+      "A real-time platform connecting technicians and consumers with live matching, queue management, and backend optimizations using Redis caching and BullMQ.",
     tags: [
       "TypeScript",
       "React.js",
@@ -39,7 +39,7 @@ const projects = [
     id: 2,
     name: "Hatbato",
     description:
-      "A peer-to-peer marketplace built with TypeScript and React, featuring advanced location-based filtering using PostGIS, secure transactions, and full listing workflows. Mobile app is planned.",
+      "A peer-to-peer marketplace built with TypeScript and React, featuring advanced location-based filtering using PostGIS, secure transactions, and full listing workflows.",
     tags: [
       "TypeScript",
       "React.js",

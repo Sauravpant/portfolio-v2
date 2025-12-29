@@ -14,7 +14,7 @@ export const SOCIAL_LINKS = [
     url: "mailto:contact@example.com",
     icon: "mail",
   },
-]
+];
 
 export const NAV_LINKS = [
   { label: "Home", href: "#home" },
@@ -23,7 +23,7 @@ export const NAV_LINKS = [
   { label: "Projects", href: "#projects" },
   { label: "Achievements", href: "#achievements" },
   { label: "Contact", href: "#contact" },
-]
+];
 
 export const SKILL_CATEGORIES = [
   {
@@ -36,7 +36,7 @@ export const SKILL_CATEGORIES = [
   },
   {
     name: "Backend",
-    skills: ["Node.js", "Express.js"],
+    skills: ["Node.js", "Express.js", "FastAPI"],
   },
   {
     name: "Mobile",
@@ -58,4 +58,4 @@ export const SKILL_CATEGORIES = [
     name: "Real-time",
     skills: ["Socket.io", "WebSockets", "WebRTC"],
   },
-]
+];
