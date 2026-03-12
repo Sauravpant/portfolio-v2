@@ -95,7 +95,7 @@ export default function Projects() {
           entry.target.classList.add("opacity-100", "translate-y-0");
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (ref.current) {
@@ -114,6 +114,10 @@ export default function Projects() {
           <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-balance text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
             Featured Projects
           </h2>
+          <p className="text-sm sm:text-base text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Note: Backends are hosted on Render’s free tier so the app may take a
+            few seconds to load on first visit.
+          </p>
 
           <div className="space-y-16">
             {projects.map((project, idx) => (
