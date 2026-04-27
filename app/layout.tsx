@@ -1,16 +1,11 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+import type React from "react";
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Saurav Pant - Full Stack Developer",
-  description:
-    "Full-Stack Web and App Developer | React Native Developer",
+  description: "Full-Stack Web and App Developer | React Native Developer",
   keywords: [
     "Full-Stack Developer",
     "Saurav Pant",
@@ -25,21 +20,23 @@ export const metadata: Metadata = {
   authors: [{ name: "Saurav Pant" }],
   openGraph: {
     title: "Saurav Pant - Full-Stack Developer",
-    description: "Full-Stack Web and App Developer | React Native | AI/ML Enthusiast",
+    description:
+      "Full-Stack Web and App Developer | React Native | AI/ML Enthusiast",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "Saurav Pant - Full-Stack Developer",
-    description: "Full-Stack Web and App Developer | React Native | AI/ML Enthusiast",
+    description:
+      "Full-Stack Web and App Developer | React Native | AI/ML Enthusiast",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className="dark scroll-smooth">
@@ -52,5 +49,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }
