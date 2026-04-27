@@ -6,44 +6,65 @@ import { SkillLogo } from "./skill-logo";
 
 const skillCategories = [
   {
-    name: "Programming Languages",
-    skills: ["C", "C++", "JavaScript", "TypeScript", "Java", "Python"],
-  },
-  {
-    name: "Frontend",
+    name: "Programming & Core Languages",
     skills: [
-      "React.js",
-      "Next.js",
-      "HTML5",
-      "CSS3",
-      "TailwindCSS",
-      "Sass",
-      "Bootstrap",
+      { name: "C++", primary: true },
+      { name: "C#", primary: true },
+      { name: "JavaScript", primary: true },
+      { name: "TypeScript", primary: true },
+      { name: "Python", primary: true },
+      { name: "C" },
+      { name: "Java" },
     ],
   },
   {
-    name: "Backend Development",
-    skills: ["Node.js", "Express.js", "FastAPI"],
+    name: "Backend Systems & APIs",
+    skills: [
+      { name: "Node.js", primary: true },
+      { name: "Express.js", primary: true },
+      { name: "ASP.NET Core", primary: true },
+      { name: "FastAPI" },
+    ],
   },
   {
-    name: "Databases and Caching",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
+    name: "Databases & Caching",
+    skills: [
+      { name: "PostgreSQL", primary: true },
+      { name: "MongoDB", primary: true },
+      { name: "Redis", primary: true },
+      { name: "MySQL" },
+      { name: "SQLite" },
+    ],
   },
   {
-    name: "ORMs & ODMs",
-    skills: ["Prisma", "Mongoose"],
+    name: "Frontend Engineering",
+    skills: [
+      { name: "React.js", primary: true },
+      { name: "Next.js", primary: true },
+      { name: "TailwindCSS", primary: true },
+      { name: "HTML5" },
+      { name: "CSS3" },
+      { name: "Sass" },
+      { name: "Bootstrap" },
+    ],
   },
   {
     name: "Mobile Development",
-    skills: ["React-Native", "Expo"],
-  },
-  {
-    name: "Cloud Platforms & Services",
-    skills: ["AWS", "Firebase", "Supabase", "Appwrite"],
+    skills: [
+      { name: "React-Native", primary: true },
+      { name: "Expo" },
+    ],
   },
   {
     name: "Tools & Platforms",
-    skills: ["Docker", "Git", "GitHub", "VSCode", "VisualStudio", "Postman"],
+    skills: [
+      { name: "Git", primary: true },
+      { name: "GitHub", primary: true },
+      { name: "Docker", primary: true },
+      { name: "Supabase", primary: true },
+      { name: "VSCode" },
+      { name: "VisualStudio" },
+    ],
   },
 ];
 
@@ -88,11 +109,28 @@ export default function Skills() {
                   <div className="grid grid-cols-4 gap-6">
                     {category.skills.map((skill) => (
                       <div
-                        key={skill}
-                        className="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-primary/15 transition-all duration-300 group cursor-pointer hover:scale-110 hover:shadow-[0_0_30px_rgba(34,211,238,0.6)]">
-                        <SkillLogo name={skill} size={40} />
-                        <span className="text-[10px] lg:text-xs font-medium text-foreground/70 group-hover:text-primary transition-colors text-center line-clamp-2">
-                          {skill}
+                        key={skill.name}
+                        className={`relative flex flex-col items-center gap-2 p-3 rounded-xl transition-all duration-300 group cursor-pointer hover:scale-110 ${
+                          skill.primary
+                            ? "bg-cyan-500/10 border-2 border-cyan-400/40 shadow-[0_0_15px_rgba(34,211,238,0.15)] ring-1 ring-cyan-400/20 hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(34,211,238,0.4)]"
+                            : "hover:bg-primary/15 border-2 border-transparent hover:shadow-[0_0_25px_rgba(34,211,238,0.3)]"
+                        }`}
+                      >
+                        {skill.primary && (
+                          <div className="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-cyan-500 shadow-[0_0_10px_rgba(34,211,238,1)]"></span>
+                          </div>
+                        )}
+                        <SkillLogo name={skill.name} size={42} />
+                        <span
+                          className={`text-[10px] lg:text-xs font-bold transition-colors text-center line-clamp-1 ${
+                            skill.primary
+                              ? "text-cyan-300"
+                              : "text-foreground/70 group-hover:text-primary"
+                          }`}
+                        >
+                          {skill.name}
                         </span>
                       </div>
                     ))}
