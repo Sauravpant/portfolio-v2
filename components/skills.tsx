@@ -9,7 +9,6 @@ const skillCategories = [
     name: "Programming & Core Languages",
     skills: [
       { name: "C++", primary: true },
-      { name: "C#", primary: true },
       { name: "JavaScript", primary: true },
       { name: "TypeScript", primary: true },
       { name: "Python", primary: true },
@@ -22,7 +21,6 @@ const skillCategories = [
     skills: [
       { name: "Node.js", primary: true },
       { name: "Express.js", primary: true },
-      { name: "ASP.NET Core", primary: true },
       { name: "FastAPI" },
     ],
   },
