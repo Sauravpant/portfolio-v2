@@ -83,7 +83,7 @@ export default function About() {
                   On the backend, I design and build scalable systems using{" "}
                   <span className="text-cyan-400  font-medium">Node.js, Express.js, PostgreSQL, and MongoDB</span>. I’m particularly interested in{" "}
                   <span className="text-cyan-400 font-medium">System Design</span> and{" "}
-                  <span className="text-cyan-400 font-medium">Microservices Architecture</span>, focusing on how production-grade systems are structured and optimized for scale.
+                  <span className="text-cyan-400 font-medium">Microservices</span>, focusing on how production-grade systems are structured and optimized for scale.
                 </p>
 
                 <p>

@@ -6,12 +6,13 @@ import { SkillLogo } from "./skill-logo";
 
 const skillCategories = [
   {
-    name: "Programming & Core Languages",
+    name: "Programming & Languages",
     skills: [
-      { name: "C++", primary: true },
-      { name: "JavaScript", primary: true },
-      { name: "TypeScript", primary: true },
-      { name: "Python", primary: true },
+      { name: "JavaScript" },
+      { name: "TypeScript" },
+      { name: "C#" },
+      { name: "Python" },
+      { name: "C++" },
       { name: "C" },
       { name: "Java" },
     ],
@@ -19,17 +20,18 @@ const skillCategories = [
   {
     name: "Backend Systems & APIs",
     skills: [
-      { name: "Node.js", primary: true },
-      { name: "Express.js", primary: true },
+      { name: "Node.js" },
+      { name: "Express.js" },
+      { name: "ASP.NET Core" },
       { name: "FastAPI" },
     ],
   },
   {
     name: "Databases & Caching",
     skills: [
-      { name: "PostgreSQL", primary: true },
-      { name: "MongoDB", primary: true },
-      { name: "Redis", primary: true },
+      { name: "PostgreSQL" },
+      { name: "MongoDB" },
+      { name: "Redis" },
       { name: "MySQL" },
       { name: "SQLite" },
     ],
@@ -37,9 +39,9 @@ const skillCategories = [
   {
     name: "Frontend Engineering",
     skills: [
-      { name: "React.js", primary: true },
-      { name: "Next.js", primary: true },
-      { name: "TailwindCSS", primary: true },
+      { name: "React.js" },
+      { name: "Next.js" },
+      { name: "TailwindCSS" },
       { name: "HTML5" },
       { name: "CSS3" },
       { name: "Sass" },
@@ -48,18 +50,15 @@ const skillCategories = [
   },
   {
     name: "Mobile Development",
-    skills: [
-      { name: "React-Native", primary: true },
-      { name: "Expo" },
-    ],
+    skills: [{ name: "React-Native" }, { name: "Expo" }],
   },
   {
     name: "Tools & Platforms",
     skills: [
-      { name: "Git", primary: true },
-      { name: "GitHub", primary: true },
-      { name: "Docker", primary: true },
-      { name: "Supabase", primary: true },
+      { name: "Git" },
+      { name: "GitHub" },
+      { name: "Docker" },
+      { name: "Supabase" },
       { name: "VSCode" },
       { name: "VisualStudio" },
     ],
@@ -76,7 +75,7 @@ export default function Skills() {
           entry.target.classList.add("opacity-100", "translate-y-0");
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (ref.current) {
@@ -109,11 +108,10 @@ export default function Skills() {
                       <div
                         key={skill.name}
                         className={`relative flex flex-col items-center gap-2 p-3 rounded-xl transition-all duration-300 group cursor-pointer hover:scale-110 ${
-                          skill.primary
-                            ? "bg-cyan-500/10 border-2 border-cyan-400/40 shadow-[0_0_15px_rgba(34,211,238,0.15)] ring-1 ring-cyan-400/20 hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(34,211,238,0.4)]"
-                            : "hover:bg-primary/15 border-2 border-transparent hover:shadow-[0_0_25px_rgba(34,211,238,0.3)]"
-                        }`}
-                      >
+                          skill.primary ?
+                            "bg-cyan-500/10 border-2 border-cyan-400/40 shadow-[0_0_15px_rgba(34,211,238,0.15)] ring-1 ring-cyan-400/20 hover:border-cyan-400 hover:shadow-[0_0_35px_rgba(34,211,238,0.4)]"
+                          : "hover:bg-primary/15 border-2 border-transparent hover:shadow-[0_0_25px_rgba(34,211,238,0.3)]"
+                        }`}>
                         {skill.primary && (
                           <div className="absolute -top-1 -right-1 flex h-3 w-3">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
@@ -123,11 +121,10 @@ export default function Skills() {
                         <SkillLogo name={skill.name} size={42} />
                         <span
                           className={`text-[10px] lg:text-xs font-bold transition-colors text-center line-clamp-1 ${
-                            skill.primary
-                              ? "text-cyan-300"
-                              : "text-foreground/70 group-hover:text-primary"
-                          }`}
-                        >
+                            skill.primary ? "text-cyan-300" : (
+                              "text-foreground/70 group-hover:text-primary"
+                            )
+                          }`}>
                           {skill.name}
                         </span>
                       </div>
