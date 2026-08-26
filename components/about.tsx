@@ -47,12 +47,12 @@ export default function About() {
               <p>
                 I&apos;m a Software Developer focused on{" "}
                 <strong className="font-bold text-zinc-950">full-stack systems and backend engineering</strong>
-                , building scalable, high-performance real-world applications. I work across the MERN and PERN stacks, leveraging React, Next.js, and React Native on the frontend, with Node.js, Express.js, PostgreSQL, and MongoDB on the backend, alongside Spring Boot and FastAPI for polyglot microservices.
+                , building scalable, high-performance real-world applications. I work across the MERN and PERN stacks, leveraging React, Next.js and React Native on the frontend, with Node.js, Express.js, PostgreSQL, and MongoDB on the backend alongside Spring Boot and FastAPI.
               </p>
               <p>
                 I am particularly interested in{" "}
                 <strong className="font-bold text-zinc-950">distributed system design &amp; microservices</strong>
-                , studying how high-throughput production systems maintain fault-tolerance, low latency, and high reliability under scale.
+                , studying how high-throughput production systems maintain fault-tolerance, low latency and high reliability under scale.
               </p>
               <p>
                 Beyond application development, I actively explore{" "}
