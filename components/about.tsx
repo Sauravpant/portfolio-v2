@@ -2,12 +2,32 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Code2, Brain, Trophy } from "lucide-react";
 
-const highlights = [
-  { icon: Code2,  label: "Full-Stack + Backend",  color: "#4338ca", bg: "#eef2ff",  border: "rgba(79,70,229,0.25)"  },
-  { icon: Brain,  label: "AI / ML Engineering",   color: "#6d28d9", bg: "#f5f3ff", border: "rgba(124,58,237,0.25)" },
-  { icon: Trophy, label: "400+ LeetCode Solved",  color: "#b45309", bg: "#fffbeb",   border: "rgba(217,119,6,0.25)"  },
+const metrics = [
+  {
+    value: "2+",
+    label: "Years Experience",
+    sub: "Software Development",
+    accent: "#4f46e5",
+    bg: "rgba(79,70,229,0.06)",
+    border: "rgba(79,70,229,0.18)",
+  },
+  {
+    value: "4+",
+    label: "Projects Delivered",
+    sub: "Client & Production Work",
+    accent: "#7c3aed",
+    bg: "rgba(124,58,237,0.06)",
+    border: "rgba(124,58,237,0.18)",
+  },
+  {
+    value: "Full-Stack",
+    label: "+ Backend",
+    sub: "Applications & Systems",
+    accent: "#0891b2",
+    bg: "rgba(8,145,178,0.06)",
+    border: "rgba(8,145,178,0.18)",
+  },
 ];
 
 export default function About() {
@@ -20,6 +40,7 @@ export default function About() {
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 max-w-6xl">
 
+        {/* Section label + heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -33,6 +54,7 @@ export default function About() {
           </h2>
         </motion.div>
 
+        {/* Text + Photo row */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-18 items-center">
 
           {/* Text */}
@@ -41,13 +63,13 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-7 space-y-6 sm:space-y-7"
+            className="lg:col-span-7 space-y-5"
           >
             <div className="space-y-4 sm:space-y-5 text-sm sm:text-base md:text-lg font-normal text-zinc-700 leading-relaxed">
               <p>
                 I&apos;m a Software Developer focused on{" "}
                 <strong className="font-bold text-zinc-950">full-stack systems and backend engineering</strong>
-                , building scalable, high-performance real-world applications. I work across the MERN and PERN stacks, leveraging React, Next.js and React Native on the frontend, with Node.js, Express.js, PostgreSQL, and MongoDB on the backend alongside Spring Boot and FastAPI.
+                , building scalable, high-performance real-world applications and delivering production-ready client work across the web.
               </p>
               <p>
                 I am particularly interested in{" "}
@@ -58,21 +80,13 @@ export default function About() {
                 Beyond application development, I actively explore{" "}
                 <strong className="font-bold text-zinc-950">AI and machine learning</strong>{" "}
                 to build data-driven intelligent systems. I also maintain strong problem-solving fundamentals with{" "}
-                <strong className="font-bold text-indigo-700 bg-indigo-50/80 px-2 py-0.5 rounded-lg border border-indigo-200/60 inline-block">400+ LeetCode problems solved</strong>.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-2 sm:gap-3 pt-1 sm:pt-2">
-              {highlights.map(({ icon: Icon, label, color, bg, border }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-2 sm:gap-2.5 px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border text-xs sm:text-sm font-bold shadow-xs"
-                  style={{ background: bg, borderColor: border, color }}
+                <strong
+                  className="font-bold text-indigo-700 bg-indigo-50/80 px-2 py-0.5 rounded-lg border border-indigo-200/60 inline-block"
                 >
-                  <Icon size={15} strokeWidth={2.5} />
-                  <span>{label}</span>
-                </div>
-              ))}
+                  400+ LeetCode problems solved
+                </strong>
+                .
+              </p>
             </div>
           </motion.div>
 
@@ -104,8 +118,45 @@ export default function About() {
               </div>
             </div>
           </motion.div>
-
         </div>
+
+        {/* Metric cards — full-width below text + photo */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-12 sm:mt-16"
+        >
+          {metrics.map(({ value, label, sub, accent, bg, border }) => (
+            <div
+              key={value + label}
+              className="relative flex flex-col items-center text-center px-6 py-7 rounded-2xl border overflow-hidden"
+              style={{ background: bg, borderColor: border }}
+            >
+              {/* Corner glow */}
+              <div
+                className="absolute top-0 right-0 w-24 h-24 rounded-full -translate-y-1/2 translate-x-1/2 opacity-25 blur-2xl pointer-events-none"
+                style={{ background: accent }}
+              />
+              <span
+                className="relative text-3xl sm:text-4xl font-extrabold tracking-tight leading-none"
+                style={{ color: accent, fontFamily: "'Space Grotesk', sans-serif" }}
+              >
+                {value}
+                {label && (
+                  <span className="text-xl sm:text-2xl font-bold" style={{ color: accent }}>
+                    {" "}{label}
+                  </span>
+                )}
+              </span>
+              <span className="relative mt-2.5 text-xs sm:text-sm font-medium text-zinc-500 tracking-wide">
+                {sub}
+              </span>
+            </div>
+          ))}
+        </motion.div>
+
       </div>
     </section>
   );

@@ -91,6 +91,42 @@ function GeminiIcon({ size = 24 }: { size?: number }) {
   );
 }
 
+function CachingIcon({ size = 24 }: { size?: number }) {
+  return (
+    <div
+      className="flex items-center justify-center rounded-lg bg-amber-50 text-amber-600 border border-amber-200/80"
+      style={{ width: size, height: size }}
+      title="Caching"
+    >
+      <Layers size={Math.max(12, Math.round(size * 0.65))} strokeWidth={2.2} />
+    </div>
+  );
+}
+
+function DistributedSystemsIcon({ size = 24 }: { size?: number }) {
+  return (
+    <div
+      className="flex items-center justify-center rounded-lg bg-cyan-50 text-cyan-600 border border-cyan-200/80"
+      style={{ width: size, height: size }}
+      title="Distributed Systems"
+    >
+      <Radio size={Math.max(12, Math.round(size * 0.65))} strokeWidth={2.2} />
+    </div>
+  );
+}
+
+function ObservabilityIcon({ size = 24 }: { size?: number }) {
+  return (
+    <div
+      className="flex items-center justify-center rounded-lg bg-rose-50 text-rose-600 border border-rose-200/80"
+      style={{ width: size, height: size }}
+      title="Observability"
+    >
+      <Activity size={Math.max(12, Math.round(size * 0.65))} strokeWidth={2.2} />
+    </div>
+  );
+}
+
 // Concept icon component registry
 const conceptIconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   "system design": SystemDesignIcon,
@@ -106,6 +142,10 @@ const conceptIconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   "asynchronous-processing": AsyncProcessingIcon,
   "async processing": AsyncProcessingIcon,
   asyncprocessing: AsyncProcessingIcon,
+  caching: CachingIcon,
+  "distributed systems": DistributedSystemsIcon,
+  "distributed system": DistributedSystemsIcon,
+  observability: ObservabilityIcon,
   gemini: GeminiIcon,
   "google gemini": GeminiIcon,
 };
@@ -159,7 +199,6 @@ const skillLogos: Record<string, string> = {
   mongodb: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
   prisma: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg",
   redis: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
-  caching: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
   mysql: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
   sqlite: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg",
 
@@ -175,7 +214,7 @@ const skillLogos: Record<string, string> = {
   jupyter: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg",
   elevenlabs: "https://cdn.simpleicons.org/elevenlabs",
 
-  // DevOps, Messaging, Distributed Systems & Observability
+  // DevOps, Messaging & Infrastructure
   docker: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
   kubernetes: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg",
   k8s: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg",
@@ -187,10 +226,9 @@ const skillLogos: Record<string, string> = {
   postman: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
   prometheus: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg",
   grafana: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
-  observability: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
   "apache kafka": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg",
   kafka: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg",
-  "distributed systems": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg",
+
   vscode: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
   "vs code": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
   "visual studio": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg",
@@ -198,6 +236,7 @@ const skillLogos: Record<string, string> = {
   "socket.io": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg",
   socketio: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/socketio/socketio-original.svg",
 };
+
 
 // Icons that are black/dark by default: slightly tint them for light backgrounds
 const darkSvgIcons = new Set(["github", "socket.io", "socketio", "expo", "next.js", "nextjs"]);
