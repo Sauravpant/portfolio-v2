@@ -99,13 +99,19 @@ export default function About() {
             className="lg:col-span-5"
           >
             <div className="relative aspect-square max-w-[280px] sm:max-w-sm mx-auto">
+              {/* Subtle gradient glow behind the image */}
               <div
-                className="absolute inset-0 rounded-3xl -translate-x-3 translate-y-3 border-2"
-                style={{ borderColor: "rgba(79,70,229,0.22)", background: "rgba(79,70,229,0.04)" }}
+                className="absolute -inset-3 rounded-[2rem] opacity-40 blur-2xl pointer-events-none"
+                style={{
+                  background: "radial-gradient(ellipse at center, rgba(79,70,229,0.25) 0%, rgba(124,58,237,0.12) 50%, transparent 80%)",
+                }}
               />
+              {/* Image container — single clean frame */}
               <div
-                className="relative h-full rounded-3xl overflow-hidden border-2 shadow-lg"
-                style={{ borderColor: "rgba(79,70,229,0.18)", background: "#eef2ff" }}
+                className="relative h-full rounded-2xl overflow-hidden shadow-xl"
+                style={{
+                  background: "linear-gradient(135deg, rgba(79,70,229,0.08), rgba(124,58,237,0.04))",
+                }}
               >
                 <Image
                   src="/profile.png"
